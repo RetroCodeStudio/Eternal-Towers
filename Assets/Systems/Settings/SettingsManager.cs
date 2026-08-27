@@ -17,21 +17,29 @@ public class SettingsManager
 
         Current = repository.Load() ?? new GameSettings();
         Current.volumen = Mathf.Clamp01(Current.volumen);
+
+        SettingsApplier.Apply(Current);
     }
 
     public void SetGraphics(GraphicsQuality graphics)
     {
         Current.graficos = graphics;
+
+        SettingsApplier.ApplyGraphics(graphics);
     }
 
     public void SetVolume(float volume)
     {
         Current.volumen = Mathf.Clamp01(volume);
+
+        SettingsApplier.ApplyVolume(Current.volumen);
     }
 
     public void Save()
     {
         Current.volumen = Mathf.Clamp01(Current.volumen);
+
+        SettingsApplier.Apply(Current);
         repository.Save(Current);
     }
 }
