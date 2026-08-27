@@ -8,4 +8,14 @@ public class PlayerProfileController : MonoBehaviour
     {
         playerProfileService = new PlayerProfileService();
     }
+
+    public PlayerProfile GetProfile()
+    {
+        return playerProfileService.GetProfile();
+    }
+
+    public void UpdateProfile(string playerName)
+    {
+        playerProfileService.UpdateProfile(playerName);
+    }
 }
