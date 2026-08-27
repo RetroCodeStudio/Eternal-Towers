@@ -10,4 +10,9 @@ public class PlayerProfileService
     {
         return profile;
     }
+
+    public void UpdateProfile(string playerName)
+    {
+        profile.playerName = playerName;
+    }
 }
