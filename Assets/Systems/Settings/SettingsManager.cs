@@ -1,12 +1,21 @@
+using System;
 using UnityEngine;
 
+/// <summary>
+/// Gestiona la configuración global durante la ejecución del juego.
+/// </summary>
 public class SettingsManager
 {
+    private readonly ISettingsRepository repository;
+
     public GameSettings Current { get; private set; }
 
-    public SettingsManager(GameSettings initialSettings = null)
+    public SettingsManager(ISettingsRepository repository)
     {
-        Current = initialSettings ?? new GameSettings();
+        this.repository = repository
+            ?? throw new ArgumentNullException(nameof(repository));
+
+        Current = repository.Load() ?? new GameSettings();
         Current.volumen = Mathf.Clamp01(Current.volumen);
     }
 
@@ -18,5 +27,11 @@ public class SettingsManager
     public void SetVolume(float volume)
     {
         Current.volumen = Mathf.Clamp01(volume);
+    }
+
+    public void Save()
+    {
+        Current.volumen = Mathf.Clamp01(Current.volumen);
+        repository.Save(Current);
     }
 }
