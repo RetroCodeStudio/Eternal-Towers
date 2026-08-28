@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../Assets/Data/Player/PlayerProfile.cs" Link="PlayerProfile.cs" />
+    <Compile Include="../Assets/Services/Player/PlayerProfileService.cs" Link="PlayerProfileService.cs" />
+  </ItemGroup>
+
+</Project>
