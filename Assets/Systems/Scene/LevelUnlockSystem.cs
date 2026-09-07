@@ -14,4 +14,12 @@ public class LevelUnlockSystem : MonoBehaviour
         highestUnlockedLevel++;
         Debug.Log("Nivel desbloqueado: " + highestUnlockedLevel);
     }
+
+    public void SetHighestUnlockedLevel(int levelNumber)
+{
+    if (levelNumber < 1)
+        levelNumber = 1;
+
+    highestUnlockedLevel = levelNumber;
+}
 }

@@ -2,39 +2,37 @@ using UnityEngine;
 
 public class LevelSystemsTest : MonoBehaviour
 {
-    [SerializeField] private LevelProgressManager progressManager;
-    [SerializeField] private LevelProgression progression;
-    [SerializeField] private LevelUnlockSystem unlockSystem;
+    [SerializeField] private LevelProgressionController controller;
 
     void Start()
     {
-        Debug.Log("=== PRUEBA COMPLETA DEL SISTEMA DE NIVELES ===");
+        Debug.Log("=== PRUEBA DE INTEGRACIÓN ===");
 
-        // 1. Comprobar estado inicial
-        Debug.Log("Nivel actual: " + progression.CurrentLevel);
-        Debug.Log("Nivel 1 completado inicialmente: " +
-                  progressManager.IsLevelCompleted(1));
+        Debug.Log("Nivel actual: " + controller.CurrentLevel);
 
-        // 2. Completar nivel 1
-        progressManager.CompleteLevel(1);
+        Debug.Log("¿Nivel 1 desbloqueado?: " +
+                  controller.IsLevelUnlocked(1));
 
-        Debug.Log("Nivel 1 completado después de completar: " +
-                  progressManager.IsLevelCompleted(1));
+        Debug.Log("¿Nivel 2 desbloqueado?: " +
+                  controller.IsLevelUnlocked(2));
 
-        // 3. Desbloquear siguiente nivel
-        unlockSystem.UnlockNextLevel();
+        Debug.Log("--- Intentando iniciar nivel 2 ---");
+        controller.StartLevel(2);
 
-        Debug.Log("¿Nivel 2 está desbloqueado?: " +
-                  unlockSystem.IsLevelUnlocked(2));
+        Debug.Log("--- Iniciando nivel 1 ---");
+        controller.StartLevel(1);
 
-        // 4. Avanzar al siguiente nivel
-        if (progression.CanAdvance())
-        {
-            progression.AdvanceLevel();
-        }
+        Debug.Log("--- Completando nivel actual ---");
+        controller.CompleteCurrentLevel();
 
-        Debug.Log("Nivel actual después de avanzar: " +
-                  progression.CurrentLevel);
+        Debug.Log("Nivel actual después de completar: " +
+                  controller.CurrentLevel);
+
+        Debug.Log("¿Nivel 2 desbloqueado ahora?: " +
+                  controller.IsLevelUnlocked(2));
+
+        Debug.Log("¿Nivel 1 completado?: " +
+                  controller.IsLevelCompleted(1));
 
         Debug.Log("=== FIN DE LA PRUEBA ===");
     }
