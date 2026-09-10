@@ -29,4 +29,15 @@ public class LevelProgression : MonoBehaviour
         currentLevel = 1;
         Debug.Log("Progresión reiniciada.");
     }
+
+    public void SetCurrentLevel(int levelNumber)
+{
+    if (levelNumber < 1)
+        return;
+
+    if (levelNumber > totalLevels)
+        levelNumber = totalLevels;
+
+    currentLevel = levelNumber;
+}
 }
