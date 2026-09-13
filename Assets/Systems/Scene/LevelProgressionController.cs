@@ -142,4 +142,32 @@ public class LevelProgressionController : MonoBehaviour
 
         return highestUnlockedLevel;
     }
+
+
+// Este codigo es provicional y sirve para reiniciar el progreso de niveles en el juego. Se puede eliminar una vez que se haya implementado un sistema de depuración más robusto.
+    [ContextMenu("Reset Saved Progress")]
+public void ResetSavedProgress()
+{
+    PlayerPrefs.DeleteKey("EternalTowers_CurrentLevel");
+    PlayerPrefs.DeleteKey("EternalTowers_HighestUnlockedLevel");
+
+    for (int levelNumber = 1; levelNumber <= 10; levelNumber++)
+    {
+        PlayerPrefs.DeleteKey(
+            "EternalTowers_Level_" + levelNumber + "_Completed"
+        );
+    }
+
+    PlayerPrefs.Save();
+
+    progression.ResetProgression();
+    unlockSystem.SetHighestUnlockedLevel(1);
+
+    for (int levelNumber = 1; levelNumber <= 10; levelNumber++)
+    {
+        progressManager.SetLevelCompleted(levelNumber, false);
+    }
+
+    Debug.Log("Progreso de niveles reiniciado.");
+}
 }
