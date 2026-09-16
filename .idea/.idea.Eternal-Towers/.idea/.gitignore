@@ -1,0 +1,15 @@
+# Archivos ignorados por defecto
+/shelf/
+/workspace.xml
+# Peticiones del cliente HTTP basadas en el editor
+/httpRequests/
+# Archivos ignorados de Rider
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Eternal-Towers.iml
+# Carpeta predeterminada ignorada con archivos de consulta
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml

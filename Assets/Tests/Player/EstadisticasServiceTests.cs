@@ -65,5 +65,19 @@ namespace EternalTowers.Tests.Player
 
             Assert.AreEqual(500, estadisticas.PuntuacionMaxima);
         }
+
+        [Test]
+        public void ActualizarPuntuacion_DebeActualizarSiLaNuevaPuntuacionEsMayor()
+        {
+            estadisticasService.ActualizarPuntuacionMaxima(
+                estadisticas,
+                500);
+
+            estadisticasService.ActualizarPuntuacionMaxima(
+                estadisticas,
+                800);
+
+            Assert.AreEqual(800, estadisticas.PuntuacionMaxima);
+        }
     }
 }
