@@ -23,6 +23,7 @@ namespace EternalTowers.Gameplay.Enemies
         [Header("Movement")]
         [SerializeField] private EnemyPath path;
         [SerializeField] private EnemyMovement movement;
+        [SerializeField] private float laneOffset;
 
         [Header("Visual")]
         [SerializeField] private EnemyVisual visual;
@@ -43,8 +44,10 @@ namespace EternalTowers.Gameplay.Enemies
         public int Reward => reward;
         public EnemyState State { get; private set; } = EnemyState.Spawning;
         public EnemyPath Path => path;
+        public float LaneOffset => laneOffset;
 
-        private readonly Dictionary<object, float> damageReductionSources = new Dictionary<object, float>();
+        private readonly Dictionary<object, float> damageReductionSources =
+            new Dictionary<object, float>();
 
         private void Awake()
         {
@@ -68,6 +71,9 @@ namespace EternalTowers.Gameplay.Enemies
 
         private void Start()
         {
+            if (State != EnemyState.Spawning)
+                return;
+
             BeginMovement();
         }
 
@@ -82,10 +88,18 @@ namespace EternalTowers.Gameplay.Enemies
 
         public virtual void TakeDamage(float damage)
         {
-            if (State == EnemyState.Dead || State == EnemyState.ReachedGoal || damage <= 0f)
+            if (
+                State == EnemyState.Dead ||
+                State == EnemyState.ReachedGoal ||
+                damage <= 0f
+            )
                 return;
 
-            CurrentHealth = Mathf.Max(0f, CurrentHealth - damage * DamageTakenMultiplier);
+            CurrentHealth = Mathf.Max(
+                0f,
+                CurrentHealth - damage * DamageTakenMultiplier
+            );
+
             visual?.PlayHit();
 
             if (CurrentHealth <= 0f)
@@ -94,13 +108,19 @@ namespace EternalTowers.Gameplay.Enemies
 
         public virtual void Die()
         {
-            if (State == EnemyState.Dead || State == EnemyState.ReachedGoal)
+            if (
+                State == EnemyState.Dead ||
+                State == EnemyState.ReachedGoal
+            )
                 return;
 
             State = EnemyState.Dead;
+
             movement?.Stop();
             visual?.PlayDeath();
+
             Died?.Invoke();
+
             RewardGranted?.Invoke(reward);
             onRewardGranted?.Invoke(reward);
 
@@ -115,11 +135,16 @@ namespace EternalTowers.Gameplay.Enemies
 
         public void ReachGoal()
         {
-            if (State == EnemyState.Dead || State == EnemyState.ReachedGoal)
+            if (
+                State == EnemyState.Dead ||
+                State == EnemyState.ReachedGoal
+            )
                 return;
 
             State = EnemyState.ReachedGoal;
+
             movement?.Stop();
+
             BaseDamageRequested?.Invoke(baseDamage);
             onBaseDamageRequested?.Invoke(baseDamage);
 
@@ -141,24 +166,61 @@ namespace EternalTowers.Gameplay.Enemies
 
         public void BeginMovement()
         {
-            if (State == EnemyState.Dead || State == EnemyState.ReachedGoal)
+            if (
+                State == EnemyState.Dead ||
+                State == EnemyState.ReachedGoal
+            )
+                return;
+
+            if (path == null || path.WaypointCount <= 0)
                 return;
 
             State = EnemyState.Moving;
-            movement?.Begin(path, moveSpeed);
+
+            movement?.Begin(
+                path,
+                moveSpeed,
+                laneOffset
+            );
         }
 
         public void SetPath(EnemyPath enemyPath)
         {
             path = enemyPath;
+
+            if (path == null)
+                return;
+
+            if (path.WaypointCount <= 0)
+                return;
+
+            if (State == EnemyState.Spawning)
+                BeginMovement();
         }
 
-        public void SetDamageReductionSource(object source, float reductionPercent)
+        public void SetLaneOffset(float offset)
+        {
+            laneOffset = offset;
+
+            if (
+                path != null &&
+                path.WaypointCount > 0 &&
+                State == EnemyState.Spawning
+            )
+            {
+                BeginMovement();
+            }
+        }
+
+        public void SetDamageReductionSource(
+            object source,
+            float reductionPercent)
         {
             if (source == null)
                 return;
 
-            damageReductionSources[source] = Mathf.Clamp01(reductionPercent / 100f);
+            damageReductionSources[source] =
+                Mathf.Clamp01(reductionPercent / 100f);
         }
 
         public void RemoveDamageReductionSource(object source)
@@ -173,8 +235,13 @@ namespace EternalTowers.Gameplay.Enemies
             {
                 float totalReduction = 0f;
 
-                foreach (float reduction in damageReductionSources.Values)
-                    totalReduction = Mathf.Max(totalReduction, reduction);
+                foreach (
+                    float reduction
+                    in damageReductionSources.Values)
+                {
+                    totalReduction =
+                        Mathf.Max(totalReduction, reduction);
+                }
 
                 return 1f - totalReduction;
             }
@@ -187,7 +254,10 @@ namespace EternalTowers.Gameplay.Enemies
 
         private IEnumerator DestroyAfterDeathAnimation()
         {
-            yield return new WaitForSeconds(deathAnimationDuration);
+            yield return new WaitForSeconds(
+                deathAnimationDuration
+            );
+
             Destroy(gameObject);
         }
     }

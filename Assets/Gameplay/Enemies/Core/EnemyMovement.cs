@@ -11,6 +11,7 @@ namespace EternalTowers.Gameplay.Enemies
 
         private EnemyPath path;
         private float moveSpeed;
+        private float laneOffset;
         private int currentWaypointIndex;
         private bool isMoving;
         private float speedMultiplier = 1f;
@@ -22,10 +23,37 @@ namespace EternalTowers.Gameplay.Enemies
 
         public void Begin(EnemyPath enemyPath, float speed)
         {
+            Begin(enemyPath, speed, 0f);
+        }
+
+        public void Begin(EnemyPath enemyPath, float speed, float offset)
+        {
             path = enemyPath;
             moveSpeed = Mathf.Max(0f, speed);
+            laneOffset = offset;
             currentWaypointIndex = 0;
-            isMoving = path != null && path.WaypointCount > 0;
+
+            if (path == null || path.WaypointCount <= 0)
+            {
+                isMoving = false;
+                return;
+            }
+
+            if (path.GetWaypoint(0) != null)
+            {
+                Vector3 firstWaypointPosition =
+                    path.GetWaypointPosition(0, laneOffset);
+
+                if (Vector3.Distance(
+                        transform.position,
+                        firstWaypointPosition) < 0.05f
+                    && path.WaypointCount > 1)
+                {
+                    currentWaypointIndex = 1;
+                }
+            }
+
+            isMoving = true;
         }
 
         public void Stop()
@@ -39,7 +67,14 @@ namespace EternalTowers.Gameplay.Enemies
             speedBoostVersion++;
 
             if (duration > 0f && Application.isPlaying)
-                StartCoroutine(RemoveSpeedMultiplierAfter(duration, speedBoostVersion));
+            {
+                StartCoroutine(
+                    RemoveSpeedMultiplierAfter(
+                        duration,
+                        speedBoostVersion
+                    )
+                );
+            }
         }
 
         private void Update()
@@ -55,28 +90,48 @@ namespace EternalTowers.Gameplay.Enemies
             if (!isMoving)
                 return;
 
-            Transform waypoint = path.GetWaypoint(currentWaypointIndex);
+            if (path == null || path.WaypointCount <= 0)
+            {
+                isMoving = false;
+                return;
+            }
+
+            Transform waypoint =
+                path.GetWaypoint(currentWaypointIndex);
+
             if (waypoint == null)
             {
                 AdvanceToNextWaypoint();
                 return;
             }
 
-            Vector3 offset = waypoint.position - transform.position;
-            if (offset.sqrMagnitude <= 0.0001f)
+            Vector3 targetPosition =
+                path.GetWaypointPosition(
+                    currentWaypointIndex,
+                    laneOffset
+                );
+
+            Vector3 direction =
+                targetPosition - transform.position;
+
+            if (direction.sqrMagnitude <= 0.0001f)
             {
                 AdvanceToNextWaypoint();
                 return;
             }
 
-            DirectionChanged?.Invoke(offset);
+            DirectionChanged?.Invoke(direction);
+
             transform.position = Vector3.MoveTowards(
                 transform.position,
-                waypoint.position,
-                CurrentSpeed * deltaTime);
+                targetPosition,
+                CurrentSpeed * deltaTime
+            );
         }
 
-        private IEnumerator RemoveSpeedMultiplierAfter(float duration, int version)
+        private IEnumerator RemoveSpeedMultiplierAfter(
+            float duration,
+            int version)
         {
             yield return new WaitForSeconds(duration);
 
