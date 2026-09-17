@@ -1,103 +1,101 @@
-using System.Collections.Generic;
-using System.Linq;
-using EternalTowers.Gameplay.Enemies;
-using EternalTowers.Gameplay.Towers;
+using EternalTowers.Gameplay.Core;
 using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
     [SerializeField] private TowerData towerData;
-    [SerializeField] private TargetPriority targetPriority = TargetPriority.First;
-    [SerializeField] private TowerProjectile projectilePrefab;
-    [SerializeField] private Transform projectileOrigin;
-    [SerializeField] private float projectileSpeed = 10f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private TowerAttackBehavior attackBehavior;
 
-    private float nextAttackTime;
-    private Enemy currentTarget;
-
+    public int UpgradeLevel { get; private set; } = 0;
+    public int MaxUpgradeLevel => towerData != null ? towerData.MaxLevel : 0;
+    public bool CanUpgrade => towerData != null && UpgradeLevel < towerData.MaxLevel;
+    public string TowerName => towerData != null ? towerData.TowerName : "Tower";
     public TowerData TowerData => towerData;
-    public TargetPriority TargetPriority => targetPriority;
+    public EternalTowers.Gameplay.Towers.TowerLevelDefinition CurrentLevel => towerData != null ? towerData.GetLevel(UpgradeLevel) : null;
+    public int UpgradeCost => GetUpgradeCost();
+    public Sprite CurrentVisualSprite => CurrentLevel != null ? CurrentLevel.towerSprite : null;
+    public float CurrentDamage => CurrentLevel != null ? CurrentLevel.damage : 0f;
+    public float CurrentRange => CurrentLevel != null ? CurrentLevel.range : 0f;
+    public float CurrentAttackSpeed => CurrentLevel != null ? CurrentLevel.attackSpeed : 0f;
 
-    public string TowerId => towerData != null ? towerData.TowerId : string.Empty;
-    public string TowerName => towerData != null ? towerData.TowerName : string.Empty;
-    public TowerType TowerType => towerData != null ? towerData.TowerType : default;
-
-    public int Cost => towerData != null ? towerData.Cost : 0;
-    public float Damage => towerData != null ? towerData.Damage : 0f;
-    public float Range => towerData != null ? towerData.Range : 0f;
-    public float AttackSpeed => towerData != null ? towerData.AttackSpeed : 0f;
-
-    public void Initialize(TowerData data)
+    private void Awake()
     {
-        towerData = data;
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if (attackBehavior == null)
+            attackBehavior = GetComponent<TowerAttackBehavior>();
+
+        RefreshVisual();
+        if (attackBehavior != null)
+            attackBehavior.Initialize(this);
     }
 
     private void Update()
     {
-        if (towerData == null)
-            return;
-
-        if (currentTarget == null || !IsValidTarget(currentTarget))
-            currentTarget = GetTarget();
-
-        if (currentTarget == null)
-            return;
-
-        if (Vector3.Distance(transform.position, currentTarget.transform.position) > Range)
-        {
-            currentTarget = null;
-            return;
-        }
-
-        if (Time.time >= nextAttackTime)
-        {
-            Attack(currentTarget);
-        }
+        if (attackBehavior != null)
+            attackBehavior.Tick();
     }
 
-    public void Attack(Enemy target)
+    public void Initialize(TowerData data)
     {
-        if (target == null || towerData == null)
-            return;
+        towerData = data;
+        UpgradeLevel = 0;
+        RefreshVisual();
 
-        if (projectilePrefab != null)
-        {
-            Vector3 origin = projectileOrigin != null ? projectileOrigin.position : transform.position;
-            TowerProjectile projectile = Instantiate(projectilePrefab, origin, Quaternion.identity);
-            projectile.Initialize(target, towerData.Damage, projectileSpeed);
-        }
-        else
-        {
-            target.TakeDamage(towerData.Damage);
-        }
-
-        nextAttackTime = Time.time + GetAttackCooldown();
+        if (attackBehavior != null)
+            attackBehavior.Initialize(this);
     }
 
-    private Enemy GetTarget()
+    public int GetUpgradeCost()
     {
         if (towerData == null)
-            return null;
+            return 0;
 
-        Enemy[] allEnemies = FindObjectsByType<Enemy>();
-        IEnumerable<Enemy> validEnemies = allEnemies.Where(IsValidTarget);
-
-        return TargetSelector.SelectTarget(validEnemies, transform.position, targetPriority, Range);
+        var nextLevel = towerData.GetNextLevel(UpgradeLevel);
+        return nextLevel != null ? nextLevel.upgradeCost : 0;
     }
 
-    private bool IsValidTarget(Enemy enemy)
+    public bool TryUpgrade(GameEconomy economy)
     {
-        if (enemy == null)
+        if (!CanUpgrade || economy == null)
             return false;
 
-        if (enemy.State == EnemyState.Dead || enemy.State == EnemyState.ReachedGoal)
+        int cost = GetUpgradeCost();
+        if (!economy.CanAfford(cost))
             return false;
 
-        return Vector3.Distance(transform.position, enemy.transform.position) <= Range;
+        if (!economy.Spend(cost))
+            return false;
+
+        ApplyUpgrade();
+
+        return true;
     }
 
-    private float GetAttackCooldown()
+    public void ApplyUpgrade()
     {
-        return AttackSpeed > 0f ? 1f / AttackSpeed : 0.25f;
+        if (!CanUpgrade)
+            return;
+
+        UpgradeLevel++;
+        RefreshVisual();
+
+        if (attackBehavior != null)
+            attackBehavior.RefreshLevel(CurrentLevel);
+    }
+
+    public void RefreshVisual()
+    {
+        if (spriteRenderer == null)
+            return;
+
+        Sprite sprite = CurrentVisualSprite;
+        if (sprite == null)
+            return;
+
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.enabled = true;
     }
 }
