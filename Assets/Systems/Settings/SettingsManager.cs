@@ -31,13 +31,34 @@ public class SettingsManager
     public void SetVolume(float volume)
     {
         Current.volumen = Mathf.Clamp01(volume);
+        Current.masterVolume = Current.volumen;
 
-        SettingsApplier.ApplyVolume(Current.volumen);
+        SettingsApplier.ApplyVolume(Current.masterVolume);
+    }
+
+    public void SetMasterVolume(float volume)
+    {
+        Current.masterVolume = Mathf.Clamp01(volume);
+        Current.volumen = Current.masterVolume;
+        SettingsApplier.ApplyVolume(Current.masterVolume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        Current.musicVolume = Mathf.Clamp01(volume);
+    }
+
+    public void SetSfxVolume(float volume)
+    {
+        Current.sfxVolume = Mathf.Clamp01(volume);
     }
 
     public void Save()
     {
         Current.volumen = Mathf.Clamp01(Current.volumen);
+        Current.masterVolume = Mathf.Clamp01(Current.masterVolume);
+        Current.musicVolume = Mathf.Clamp01(Current.musicVolume);
+        Current.sfxVolume = Mathf.Clamp01(Current.sfxVolume);
 
         SettingsApplier.Apply(Current);
         repository.Save(Current);

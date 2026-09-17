@@ -14,7 +14,14 @@ namespace EternalTowers.Gameplay.Enemies
 
         public Enemy Spawn()
         {
-            if (enemyPrefab == null)
+            return Spawn(enemyPrefab);
+        }
+
+        public Enemy Spawn(Enemy prefabOverride)
+        {
+            Enemy prefabToSpawn = prefabOverride != null ? prefabOverride : enemyPrefab;
+
+            if (prefabToSpawn == null)
             {
                 Debug.LogWarning("EnemySpawner: enemyPrefab is null.", this);
                 return null;
@@ -34,10 +41,9 @@ namespace EternalTowers.Gameplay.Enemies
 
             Vector3 spawnPosition = spawnPoint != null ? spawnPoint.position : transform.position;
             Quaternion spawnRotation = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
-            Enemy enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation);
+            Enemy enemy = Instantiate(prefabToSpawn, spawnPosition, spawnRotation);
 
             float laneOffset = GetNextLaneOffset();
-            Debug.Log($"EnemySpawner: spawning '{enemy.name}' at {spawnPosition}. path={path.name}. laneOffset={laneOffset}.", this);
             enemy.SetPath(path);
             enemy.SetLaneOffset(laneOffset);
             enemy.BeginMovement();
