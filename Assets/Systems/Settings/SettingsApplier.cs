@@ -13,7 +13,7 @@ public static class SettingsApplier
         }
 
         ApplyGraphics(settings.graficos);
-        ApplyVolume(settings.volumen);
+        ApplyVolume(settings.masterVolume > 0f ? settings.masterVolume : settings.volumen);
     }
 
     public static void ApplyGraphics(GraphicsQuality graphics)

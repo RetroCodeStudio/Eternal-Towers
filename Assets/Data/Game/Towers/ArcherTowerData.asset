@@ -16,6 +16,57 @@ MonoBehaviour:
   towerName: Torre Arquera
   towerType: 0
   cost: 100
-  damage: 10
-  range: 5
-  attackSpeed: 1.5
+  towerIcon: {fileID: -3556236393986121329, guid: 807aff4e602066041a3f05c02d3a4c1e, type: 3}
+  levels:
+  - level: 0
+    upgradeCost: 0
+    damage: 15
+    range: 5
+    attackSpeed: 1
+    behaviorType: 0
+    projectilePrefab: {fileID: 1604803345635058406, guid: 08d8e62d4892801499b0e1ec0a210a9e, type: 3}
+    projectileSpeed: 10
+    projectileLifeTime: 5
+    summonPrefab: {fileID: 0}
+    summonCount: 0
+    summonCooldown: 0
+    towerSprite: {fileID: -3556236393986121329, guid: 807aff4e602066041a3f05c02d3a4c1e, type: 3}
+  - level: 1
+    upgradeCost: 150
+    damage: 30
+    range: 10
+    attackSpeed: 1
+    behaviorType: 0
+    projectilePrefab: {fileID: 8792506813479092845, guid: 56f3980c939dfc04589a04586e386563, type: 3}
+    projectileSpeed: 10
+    projectileLifeTime: 5
+    summonPrefab: {fileID: 0}
+    summonCount: 0
+    summonCooldown: 0
+    towerSprite: {fileID: -750242755, guid: 807aff4e602066041a3f05c02d3a4c1e, type: 3}
+  - level: 2
+    upgradeCost: 225
+    damage: 45
+    range: 12
+    attackSpeed: 1
+    behaviorType: 0
+    projectilePrefab: {fileID: 5106694739649994687, guid: 6fc7e4b4bc9acb74aaf662e0721e34a0, type: 3}
+    projectileSpeed: 10
+    projectileLifeTime: 5
+    summonPrefab: {fileID: 0}
+    summonCount: 0
+    summonCooldown: 0
+    towerSprite: {fileID: 114849509, guid: 807aff4e602066041a3f05c02d3a4c1e, type: 3}
+  - level: 3
+    upgradeCost: 300
+    damage: 60
+    range: 15
+    attackSpeed: 2
+    behaviorType: 0
+    projectilePrefab: {fileID: 3508560566031193907, guid: f162b75fbb49c3c4f85b7d6930f32aa4, type: 3}
+    projectileSpeed: 10
+    projectileLifeTime: 5
+    summonPrefab: {fileID: 0}
+    summonCount: 0
+    summonCooldown: 0
+    towerSprite: {fileID: -1534588053, guid: 807aff4e602066041a3f05c02d3a4c1e, type: 3}
