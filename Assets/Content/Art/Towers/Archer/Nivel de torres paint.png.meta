@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 7eb3643ea19c123409aec51fdf02715c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8499484327889317667
+    second: Nivel de torres paint_0
+  - first:
+      213: 7807320472632845555
+    second: Nivel de torres paint_1
+  - first:
+      213: -2401893041554950125
+    second: Nivel de torres paint_2
+  - first:
+      213: -928302567982945538
+    second: Nivel de torres paint_3
+  - first:
+      213: 8390510654284192688
+    second: Nivel de torres paint_4
+  - first:
+      213: 6784698856278559465
+    second: Nivel de torres paint_5
+  - first:
+      213: -5766701275162980633
+    second: Nivel de torres paint_6
+  - first:
+      213: 1806771582142284086
+    second: Nivel de torres paint_7
+  - first:
+      213: 1428709408088999113
+    second: Nivel de torres paint_8
+  - first:
+      213: 1245112889574233203
+    second: Nivel de torres paint_9
+  - first:
+      213: 2140748977665273952
+    second: Nivel de torres paint_10
+  - first:
+      213: 748420713932872818
+    second: Nivel de torres paint_11
+  - first:
+      213: -7005572707861665525
+    second: Nivel de torres paint_12
+  - first:
+      213: 6774155775861050655
+    second: Nivel de torres paint_13
+  - first:
+      213: 1618909848558388176
+    second: Nivel de torres paint_14
+  - first:
+      213: 8073351629656158739
+    second: Nivel de torres paint_15
+  - first:
+      213: 3116166557803849058
+    second: Nivel de torres paint_16
+  - first:
+      213: 879336738894014492
+    second: Nivel de torres paint_17
+  - first:
+      213: 3097309319551823569
+    second: Nivel de torres paint_18
+  - first:
+      213: 3152756804142738501
+    second: Nivel de torres paint_19
+  - first:
+      213: -2881237671858463071
+    second: Nivel de torres paint_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nivel de torres paint_0
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 876
+        width: 40
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32fa7d9c6fb34f570800000000000000
+      internalID: 8499484327889317667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_1
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 854
+        width: 50
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f46aeada9c295c60800000000000000
+      internalID: 7807320472632845555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_2
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 700
+        width: 114
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31872a52103caaed0800000000000000
+      internalID: -2401893041554950125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_3
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 854
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa2b479bb10e13f0800000000000000
+      internalID: -928302567982945538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_4
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 840
+        width: 34
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb5db83cf4117470800000000000000
+      internalID: 8390510654284192688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_5
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 731
+        width: 96
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea8b74b9a7182e50800000000000000
+      internalID: 6784698856278559465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_6
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 840
+        width: 40
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee4e185ebf88ffa0800000000000000
+      internalID: -5766701275162980633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_7
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 14
+        width: 614
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6318cd76e21f21910800000000000000
+      internalID: 1806771582142284086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_8
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 691
+        width: 103
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4476413abc3d310800000000000000
+      internalID: 1428709408088999113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_9
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 729
+        width: 284
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37415508397874110800000000000000
+      internalID: 1245112889574233203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_10
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 807
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060f40f5ad775bd10800000000000000
+      internalID: 2140748977665273952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_11
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 721
+        width: 116
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c538c8cace26a00800000000000000
+      internalID: 748420713932872818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_12
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 799
+        width: 104
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09ebb34db437ce90800000000000000
+      internalID: -7005572707861665525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_13
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 711
+        width: 79
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dcb5189c2a20e50800000000000000
+      internalID: 6774155775861050655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_14
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 744
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d344be0ee5877610800000000000000
+      internalID: 1618909848558388176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_15
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 692
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312f970688e4a0070800000000000000
+      internalID: 8073351629656158739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_16
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 692
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265a9d269f8de3b20800000000000000
+      internalID: 3116166557803849058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_17
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 709
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c186ab7ea18043c00800000000000000
+      internalID: 879336738894014492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_18
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 87
+        width: 423
+        height: 603
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dea4677a6adbfa20800000000000000
+      internalID: 3097309319551823569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_19
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 56
+        width: 467
+        height: 638
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54caf1efb97d0cb20800000000000000
+      internalID: 3152756804142738501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nivel de torres paint_20
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 19
+        width: 495
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae17675a99c308d0800000000000000
+      internalID: -2881237671858463071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nivel de torres paint_0: 8499484327889317667
+      Nivel de torres paint_1: 7807320472632845555
+      Nivel de torres paint_10: 2140748977665273952
+      Nivel de torres paint_11: 748420713932872818
+      Nivel de torres paint_12: -7005572707861665525
+      Nivel de torres paint_13: 6774155775861050655
+      Nivel de torres paint_14: 1618909848558388176
+      Nivel de torres paint_15: 8073351629656158739
+      Nivel de torres paint_16: 3116166557803849058
+      Nivel de torres paint_17: 879336738894014492
+      Nivel de torres paint_18: 3097309319551823569
+      Nivel de torres paint_19: 3152756804142738501
+      Nivel de torres paint_2: -2401893041554950125
+      Nivel de torres paint_20: -2881237671858463071
+      Nivel de torres paint_3: -928302567982945538
+      Nivel de torres paint_4: 8390510654284192688
+      Nivel de torres paint_5: 6784698856278559465
+      Nivel de torres paint_6: -5766701275162980633
+      Nivel de torres paint_7: 1806771582142284086
+      Nivel de torres paint_8: 1428709408088999113
+      Nivel de torres paint_9: 1245112889574233203
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
