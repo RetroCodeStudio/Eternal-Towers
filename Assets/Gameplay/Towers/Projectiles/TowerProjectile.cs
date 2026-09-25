@@ -1,4 +1,5 @@
 using EternalTowers.Gameplay.Enemies;
+using EternalTowers.Gameplay.Towers;
 using UnityEngine;
 
 namespace EternalTowers.Gameplay.Towers
@@ -11,13 +12,36 @@ namespace EternalTowers.Gameplay.Towers
         private float damage;
         private float speed;
         private float lifeTime;
+        private bool damageReservationRegistered;
+        private TowerController ownerTower;
+        private bool ownerAssigned;
 
         public void Initialize(Enemy targetEnemy, float projectileDamage, float projectileSpeed, float projectileLifeTime)
         {
+            Initialize(targetEnemy, projectileDamage, projectileSpeed, projectileLifeTime, null);
+        }
+
+        public void Initialize(
+            Enemy targetEnemy,
+            float projectileDamage,
+            float projectileSpeed,
+            float projectileLifeTime,
+            TowerController owner)
+        {
+            ReleaseDamageReservation();
+
             target = targetEnemy;
             damage = projectileDamage;
             speed = projectileSpeed;
             lifeTime = projectileLifeTime;
+            ownerTower = owner;
+            ownerAssigned = true;
+            damageReservationRegistered = PendingDamageRegistry.Register(target, this, damage);
+        }
+
+        private void OnDisable()
+        {
+            ReleaseDamageReservation();
         }
 
         private void Update()
@@ -27,13 +51,22 @@ namespace EternalTowers.Gameplay.Towers
                 lifeTime -= Time.deltaTime;
                 if (lifeTime <= 0f)
                 {
+                    ReleaseDamageReservation();
                     Destroy(gameObject);
                     return;
                 }
             }
 
+            if (ownerAssigned && ownerTower == null)
+            {
+                ReleaseDamageReservation();
+                Destroy(gameObject);
+                return;
+            }
+
             if (target == null || target.State == EnemyState.Dead || target.State == EnemyState.ReachedGoal)
             {
+                ReleaseDamageReservation();
                 Destroy(gameObject);
                 return;
             }
@@ -46,9 +79,19 @@ namespace EternalTowers.Gameplay.Towers
 
             if (Vector3.Distance(transform.position, target.transform.position) <= 0.15f)
             {
+                ReleaseDamageReservation();
                 target.TakeDamage(damage);
                 Destroy(gameObject);
             }
+        }
+
+        private void ReleaseDamageReservation()
+        {
+            if (!damageReservationRegistered)
+                return;
+
+            PendingDamageRegistry.Release(target, this);
+            damageReservationRegistered = false;
         }
     }
 }

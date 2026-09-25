@@ -9,6 +9,16 @@ namespace EternalTowers.Gameplay.Towers
     {
         public static Enemy SelectTarget(IEnumerable<Enemy> enemies, Vector3 origin, TargetPriority priority, float range)
         {
+            return SelectTarget(enemies, origin, priority, range, 0f);
+        }
+
+        public static Enemy SelectTarget(
+            IEnumerable<Enemy> enemies,
+            Vector3 origin,
+            TargetPriority priority,
+            float range,
+            float projectileDamage)
+        {
             if (enemies == null)
                 return null;
 
@@ -20,6 +30,16 @@ namespace EternalTowers.Gameplay.Towers
 
             if (validTargets.Count == 0)
                 return null;
+
+            if (projectileDamage > 0f)
+            {
+                List<Enemy> targetsNeedingDamage = validTargets
+                    .Where(enemy => PendingDamageRegistry.GetRemainingHealth(enemy) > 0f)
+                    .ToList();
+
+                if (targetsNeedingDamage.Count > 0)
+                    validTargets = targetsNeedingDamage;
+            }
 
             switch (priority)
             {
