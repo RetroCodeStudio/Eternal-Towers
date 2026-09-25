@@ -61,7 +61,7 @@ MonoBehaviour:
     upgradeCost: 300
     damage: 60
     range: 15
-    attackSpeed: 2
+    attackSpeed: 5
     behaviorType: 0
     projectilePrefab: {fileID: 3508560566031193907, guid: f162b75fbb49c3c4f85b7d6930f32aa4, type: 3}
     projectileSpeed: 10

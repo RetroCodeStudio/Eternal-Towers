@@ -62,6 +62,8 @@ namespace EternalTowers.Gameplay.Enemies
 
         protected virtual void OnEnable()
         {
+            EnemyRegistry.Register(this);
+
             if (movement != null)
             {
                 movement.ReachedGoal += ReachGoal;
@@ -79,6 +81,9 @@ namespace EternalTowers.Gameplay.Enemies
 
         protected virtual void OnDisable()
         {
+            EnemyRegistry.Unregister(this);
+            EternalTowers.Gameplay.Towers.PendingDamageRegistry.ReleaseAllForEnemy(this);
+
             if (movement != null)
             {
                 movement.ReachedGoal -= ReachGoal;
@@ -115,6 +120,7 @@ namespace EternalTowers.Gameplay.Enemies
                 return;
 
             State = EnemyState.Dead;
+            EternalTowers.Gameplay.Towers.PendingDamageRegistry.ReleaseAllForEnemy(this);
 
             movement?.Stop();
             visual?.PlayDeath();
@@ -142,6 +148,7 @@ namespace EternalTowers.Gameplay.Enemies
                 return;
 
             State = EnemyState.ReachedGoal;
+            EternalTowers.Gameplay.Towers.PendingDamageRegistry.ReleaseAllForEnemy(this);
 
             movement?.Stop();
 

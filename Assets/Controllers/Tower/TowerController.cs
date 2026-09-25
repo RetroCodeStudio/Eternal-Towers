@@ -1,4 +1,5 @@
 using EternalTowers.Gameplay.Core;
+using EternalTowers.Gameplay.Towers;
 using UnityEngine;
 
 public class TowerController : MonoBehaviour
@@ -6,12 +7,14 @@ public class TowerController : MonoBehaviour
     [SerializeField] private TowerData towerData;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private TowerAttackBehavior attackBehavior;
+    [SerializeField] private TargetPriority targetPriority = TargetPriority.First;
 
     public int UpgradeLevel { get; private set; } = 0;
     public int MaxUpgradeLevel => towerData != null ? towerData.MaxLevel : 0;
     public bool CanUpgrade => towerData != null && UpgradeLevel < towerData.MaxLevel;
     public string TowerName => towerData != null ? towerData.TowerName : "Tower";
     public TowerData TowerData => towerData;
+    public TargetPriority TargetPriority => targetPriority;
     public EternalTowers.Gameplay.Towers.TowerLevelDefinition CurrentLevel => towerData != null ? towerData.GetLevel(UpgradeLevel) : null;
     public int UpgradeCost => GetUpgradeCost();
     public Sprite CurrentVisualSprite => CurrentLevel != null ? CurrentLevel.towerSprite : null;
