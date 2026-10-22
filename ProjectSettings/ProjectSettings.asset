@@ -688,11 +688,11 @@ PlayerSettings:
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
   enableDirectStorage: 0
-  cloudProjectId: 3806c92a-a2de-4527-95ba-28eed5af9a38
+  cloudProjectId: cc41a066-4ac7-4c7c-a251-ef10faca0436
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Eternal-Towers
-  organizationId: juanpacl
+  organizationId: deividiazg5
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
