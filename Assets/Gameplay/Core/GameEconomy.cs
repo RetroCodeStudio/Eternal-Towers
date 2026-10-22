@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace EternalTowers.Gameplay.Core
 {
     public class GameEconomy : MonoBehaviour
     {
+        public event Action<int> GoldChanged;
+
         [SerializeField] private int startingGold = 100;
         [SerializeField] private int currentGold;
 
@@ -25,6 +28,7 @@ namespace EternalTowers.Gameplay.Core
                 return false;
 
             currentGold -= amount;
+            GoldChanged?.Invoke(currentGold);
             return true;
         }
 
@@ -34,6 +38,7 @@ namespace EternalTowers.Gameplay.Core
                 return;
 
             currentGold += amount;
+            GoldChanged?.Invoke(currentGold);
         }
     }
 }

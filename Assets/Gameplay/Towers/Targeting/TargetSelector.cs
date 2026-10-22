@@ -9,6 +9,16 @@ namespace EternalTowers.Gameplay.Towers
     {
         public static Enemy SelectTarget(IEnumerable<Enemy> enemies, Vector3 origin, TargetPriority priority, float range)
         {
+            return SelectTarget(enemies, origin, priority, range, 0f);
+        }
+
+        public static Enemy SelectTarget(
+            IEnumerable<Enemy> enemies,
+            Vector3 origin,
+            TargetPriority priority,
+            float range,
+            float projectileDamage)
+        {
             if (enemies == null)
                 return null;
 
@@ -20,6 +30,16 @@ namespace EternalTowers.Gameplay.Towers
 
             if (validTargets.Count == 0)
                 return null;
+
+            if (projectileDamage > 0f)
+            {
+                List<Enemy> targetsNeedingDamage = validTargets
+                    .Where(enemy => PendingDamageRegistry.GetRemainingHealth(enemy) > 0f)
+                    .ToList();
+
+                if (targetsNeedingDamage.Count > 0)
+                    validTargets = targetsNeedingDamage;
+            }
 
             switch (priority)
             {
@@ -53,28 +73,14 @@ namespace EternalTowers.Gameplay.Towers
 
         private static float GetProgressValue(Enemy enemy)
         {
-            if (enemy == null || enemy.Path == null)
+            if (enemy == null)
                 return 0f;
 
             EnemyMovement movement = enemy.GetComponent<EnemyMovement>();
             if (movement == null)
                 return 0f;
 
-            int waypointIndex = movement.CurrentWaypointIndex;
-            Transform currentWaypoint = enemy.Path.GetWaypoint(waypointIndex);
-            Transform previousWaypoint = enemy.Path.GetWaypoint(waypointIndex - 1);
-
-            if (currentWaypoint == null)
-                return waypointIndex;
-
-            float segmentLength = previousWaypoint != null
-                ? Vector3.Distance(previousWaypoint.position, currentWaypoint.position)
-                : 1f;
-
-            float distanceToCurrent = Vector3.Distance(enemy.transform.position, currentWaypoint.position);
-            float localProgress = segmentLength <= 0f ? 0f : 1f - (distanceToCurrent / segmentLength);
-
-            return waypointIndex + localProgress;
+            return movement.PathProgress;
         }
     }
 }

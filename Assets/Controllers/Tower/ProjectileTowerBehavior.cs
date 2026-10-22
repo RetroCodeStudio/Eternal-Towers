@@ -16,39 +16,18 @@ public class ProjectileTowerBehavior : TowerAttackBehavior
         if (Time.time < nextAttackTime)
             return;
 
-        Enemy target = FindClosestEnemy();
+        Enemy target = TargetSelector.SelectTarget(
+            EnemyRegistry.ActiveEnemies,
+            transform.position,
+            towerController.TargetPriority,
+            currentLevel.range,
+            towerController.CurrentDamage);
 
         if (target == null)
             return;
 
         FireProjectile(target);
         nextAttackTime = Time.time + Mathf.Max(0.15f, 1f / Mathf.Max(0.05f, currentLevel.attackSpeed));
-    }
-
-    private Enemy FindClosestEnemy()
-    {
-        Enemy[] enemies = FindObjectsByType<Enemy>();
-
-        Enemy best = null;
-        float bestDistance = float.MaxValue;
-
-        foreach (Enemy enemy in enemies)
-        {
-            if (enemy == null)
-                continue;
-
-            if (enemy.State == EnemyState.Dead || enemy.State == EnemyState.ReachedGoal)
-                continue;
-
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance <= currentLevel.range && distance < bestDistance)
-            {
-                bestDistance = distance;
-                best = enemy;
-            }
-        }
-
-        return best;
     }
 
     private void FireProjectile(Enemy target)
@@ -63,6 +42,11 @@ public class ProjectileTowerBehavior : TowerAttackBehavior
         if (projectile == null)
             return;
 
-        projectile.Initialize(target, currentLevel.damage, currentLevel.projectileSpeed, currentLevel.projectileLifeTime);
+        projectile.Initialize(
+            target,
+            towerController.CurrentDamage,
+            currentLevel.projectileSpeed,
+            currentLevel.projectileLifeTime,
+            towerController);
     }
 }
