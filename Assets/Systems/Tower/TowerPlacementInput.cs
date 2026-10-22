@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class TowerPlacementInput : MonoBehaviour
 {
+    [HideInInspector]
     [SerializeField] private TowerPlacementSystem placementSystem;
+    [HideInInspector]
     [SerializeField] private GameObject towerPrefab;
+    [HideInInspector]
     [SerializeField] private TowerData towerData;
+    [HideInInspector]
     [SerializeField] private KeyCode placeKey = KeyCode.Mouse0;
-
-    private void Update()
-    {
-        if (placementSystem == null || towerPrefab == null)
-            return;
-
-        if (!Input.GetKeyDown(placeKey))
-            return;
-
-        Vector2 position = placementSystem.GetMouseWorldPosition();
-        placementSystem.TryPlaceTower(towerPrefab, towerData, position);
-    }
 }

@@ -11,6 +11,9 @@ namespace EternalTowers.Gameplay.UI
         [SerializeField] private BaseHealth baseHealth;
         [SerializeField] private WaveManager waveManager;
         [SerializeField] private TowerSelectionController towerSelectionController;
+        [SerializeField] private TowerPlacementSystem towerPlacementSystem;
+        [SerializeField] private TowerBuildMenu buildMenu;
+        [SerializeField] private SelectedTowerPanel selectedTowerPanel;
 
         private void Awake()
         {
@@ -25,15 +28,33 @@ namespace EternalTowers.Gameplay.UI
 
             if (towerSelectionController == null)
                 towerSelectionController = FindAnyObjectByType<TowerSelectionController>();
+
+            if (towerPlacementSystem == null)
+                towerPlacementSystem = FindAnyObjectByType<TowerPlacementSystem>();
+
+            if (buildMenu == null)
+                buildMenu = FindAnyObjectByType<TowerBuildMenu>();
+
+            if (selectedTowerPanel == null)
+                selectedTowerPanel = FindAnyObjectByType<SelectedTowerPanel>();
         }
 
         private void Start()
         {
             if (hud != null)
-                hud.Bind(economy, baseHealth, waveManager, towerSelectionController);
+                hud.Bind(economy, baseHealth, waveManager);
+
+            if (towerPlacementSystem != null)
+                towerPlacementSystem.SetEconomy(economy);
+
+            if (selectedTowerPanel != null)
+                selectedTowerPanel.Bind(economy);
 
             if (towerSelectionController != null)
-                towerSelectionController.SetHud(hud);
+                towerSelectionController.SetInteractionReferences(
+                    towerPlacementSystem,
+                    buildMenu,
+                    selectedTowerPanel);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using EternalTowers.Gameplay.Core;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class TowerPlacementSystem : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform towerParent;
     [SerializeField] private GameEconomy economy;
+    [SerializeField] private List<TowerData> availableTowers = new List<TowerData>();
     [SerializeField] private bool addTemporaryMaxUpgradeOnPlacement = true;
 
     [Header("Validación")]
@@ -14,6 +16,7 @@ public class TowerPlacementSystem : MonoBehaviour
     [SerializeField] private LayerMask blockedAreaMask;
 
     public GameEconomy Economy => economy;
+    public IReadOnlyList<TowerData> AvailableTowers => availableTowers;
 
     private void Awake()
     {
@@ -82,23 +85,22 @@ public class TowerPlacementSystem : MonoBehaviour
 
         int cost = towerData != null ? towerData.Cost : 0;
 
-        if (economy != null &&
-            cost > 0 &&
-            !economy.CanAfford(cost))
+        if (cost > 0 && (economy == null || !economy.CanAfford(cost)))
         {
             return false;
         }
+
+        if (cost > 0 && !economy.Spend(cost))
+            return false;
 
         GameObject towerObject = PlaceTower(towerPrefab, position);
 
         if (towerObject == null)
         {
-            return false;
-        }
+            if (cost > 0)
+                economy.Earn(cost);
 
-        if (economy != null && cost > 0)
-        {
-            economy.Spend(cost);
+            return false;
         }
 
         TowerController towerController =
@@ -128,6 +130,11 @@ public class TowerPlacementSystem : MonoBehaviour
         }
 
         return true;
+    }
+
+    public bool TryPlaceTower(TowerData towerData, Vector2 position)
+    {
+        return towerData != null && TryPlaceTower(towerData.TowerPrefab, towerData, position);
     }
 
     public GameObject PlaceTower(

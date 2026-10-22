@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6808733625049879353, guid: 87c08a0bae112d6478889602015d697f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,13 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b55cf48de35bbc438280d2c691317a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EternalTowers.Gameplay.Enemies.GoblinEnemy
-  maxHealth: 60
+  maxHealth: 30
   moveSpeed: 1
   baseDamage: 1
   reward: 10
-  path: {fileID: 0}
-  movement: {fileID: 0}
-  laneOffset: 0
+  movement: {fileID: 7312569110656372438}
   visual: {fileID: 6975015554525079739}
   deathAnimationDuration: 1
   onBaseDamageRequested:
