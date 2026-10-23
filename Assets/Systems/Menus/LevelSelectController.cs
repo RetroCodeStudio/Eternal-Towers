@@ -1,77 +1,127 @@
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelSelectController : MonoBehaviour
 {
-    [SerializeField] private LevelCatalog catalog;
+    [Header("Level Selection")]
     [SerializeField] private LevelUnlockSystem unlockSystem;
     [SerializeField] private Transform levelContainer;
     [SerializeField] private GameObject levelButtonPrefab;
 
+    private readonly List<LevelConfiguration> levels =
+        new List<LevelConfiguration>();
+
     private void Start()
     {
-        if (catalog == null)
-            catalog = new LevelCatalog();
-
-        if (catalog.levels == null)
-            catalog.levels = new List<LevelConfiguration>();
-
-        if (catalog.levels.Count == 0)
-        {
-            catalog.levels.Add(new LevelConfiguration { levelNumber = 1, levelName = "Level 1", sceneName = "Level_01", totalWaves = 3, difficulty = 1, isUnlocked = true });
-            catalog.levels.Add(new LevelConfiguration { levelNumber = 2, levelName = "Level 2", sceneName = "Level_02", totalWaves = 4, difficulty = 2, isUnlocked = false });
-            catalog.levels.Add(new LevelConfiguration { levelNumber = 3, levelName = "Level 3", sceneName = "Level_03", totalWaves = 5, difficulty = 3, isUnlocked = false });
-        }
-
-        if (unlockSystem != null)
-        {
-            for (int i = 0; i < catalog.levels.Count; i++)
-            {
-                var level = catalog.levels[i];
-                level.isUnlocked = unlockSystem.IsLevelUnlocked(level.levelNumber);
-            }
-        }
-
+        LoadLevelsFromBuildSettings();
         BuildButtons();
+    }
+
+    private void LoadLevelsFromBuildSettings()
+    {
+        levels.Clear();
+
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+
+            if (!sceneName.StartsWith(
+                "level_", System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            string numberText = sceneName.Substring("level_".Length);
+
+            if (!int.TryParse(numberText, out int levelNumber))
+                continue;
+
+            bool unlocked = unlockSystem != null
+                ? unlockSystem.IsLevelUnlocked(levelNumber)
+                : levelNumber == 1;
+
+            levels.Add(new LevelConfiguration
+            {
+                levelNumber = levelNumber,
+                levelName = "Nivel " + levelNumber,
+                sceneName = sceneName,
+                isUnlocked = unlocked
+            });
+        }
+
+        levels.Sort((a, b) => a.levelNumber.CompareTo(b.levelNumber));
+
+        if (levels.Count == 0)
+        {
+            Debug.LogWarning(
+                "No se encontraron escenas level_1, level_2, etc. " +
+                "Revisa la lista de escenas de Build Settings.");
+        }
     }
 
     private void BuildButtons()
     {
         if (levelContainer == null || levelButtonPrefab == null)
+        {
+            Debug.LogError(
+                "LevelSelectController: asigna Level Container " +
+                "y Level Button Prefab en el Inspector.");
             return;
+        }
 
         foreach (Transform child in levelContainer)
-            Destroy(child.gameObject);
-
-        for (int i = 0; i < catalog.levels.Count; i++)
         {
-            LevelConfiguration level = catalog.levels[i];
-            GameObject buttonObject = Instantiate(levelButtonPrefab, levelContainer);
+            Destroy(child.gameObject);
+        }
+
+        foreach (LevelConfiguration level in levels)
+        {
+            GameObject buttonObject =
+                Instantiate(levelButtonPrefab, levelContainer);
+
             Button button = buttonObject.GetComponent<Button>();
+            TMP_Text tmpLabel = buttonObject.GetComponentInChildren<TMP_Text>();
             Text label = buttonObject.GetComponentInChildren<Text>();
 
-            if (label != null)
-                label.text = level.levelName + (level.isUnlocked ? " [Unlocked]" : " [Locked]");
+            string buttonText = level.levelName +
+                (level.isUnlocked ? "" : " (Bloqueado)");
+
+            if (tmpLabel != null)
+            {
+                tmpLabel.text = buttonText;
+            }
+            else if (label != null)
+            {
+                label.text = buttonText;
+            }
 
             if (button != null)
             {
                 button.interactable = level.isUnlocked;
-                button.onClick.AddListener(() => SelectLevel(level));
+
+                LevelConfiguration selectedLevel = level;
+                button.onClick.AddListener(
+                    () => SelectLevel(selectedLevel));
             }
         }
     }
 
     private void SelectLevel(LevelConfiguration level)
     {
-        if (level == null)
+        if (level == null || !level.isUnlocked)
             return;
 
-        if (unlockSystem != null && !unlockSystem.IsLevelUnlocked(level.levelNumber))
+        if (unlockSystem != null &&
+            !unlockSystem.IsLevelUnlocked(level.levelNumber))
+        {
             return;
+        }
 
-        if (!string.IsNullOrEmpty(level.sceneName))
-            SceneManager.LoadScene(level.sceneName);
+        SceneManager.LoadScene(level.sceneName);
     }
 }
