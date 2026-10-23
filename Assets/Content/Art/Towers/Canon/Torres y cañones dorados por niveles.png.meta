@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 949ca2c7febd446449b95c9b9b83314c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4813129696850502825
+    second: "Torres y ca\xF1ones dorados por niveles_0"
+  - first:
+      213: -550000789589046104
+    second: "Torres y ca\xF1ones dorados por niveles_1"
+  - first:
+      213: 6886343352038418218
+    second: "Torres y ca\xF1ones dorados por niveles_2"
+  - first:
+      213: -8103385670854846309
+    second: "Torres y ca\xF1ones dorados por niveles_3"
+  - first:
+      213: 1665770536316907243
+    second: "Torres y ca\xF1ones dorados por niveles_4"
+  - first:
+      213: -957759331508872595
+    second: "Torres y ca\xF1ones dorados por niveles_5"
+  - first:
+      213: 2594857219475289889
+    second: "Torres y ca\xF1ones dorados por niveles_6"
+  - first:
+      213: -1741433716134344623
+    second: "Torres y ca\xF1ones dorados por niveles_7"
+  - first:
+      213: -6394832550978110132
+    second: "Torres y ca\xF1ones dorados por niveles_8"
+  - first:
+      213: -672552710773579605
+    second: "Torres y ca\xF1ones dorados por niveles_9"
+  - first:
+      213: 5797907423484407425
+    second: "Torres y ca\xF1ones dorados por niveles_10"
+  - first:
+      213: -2939382940190746897
+    second: "Torres y ca\xF1ones dorados por niveles_11"
+  - first:
+      213: 3852559619858514446
+    second: "Torres y ca\xF1ones dorados por niveles_12"
+  - first:
+      213: 761771070287619671
+    second: "Torres y ca\xF1ones dorados por niveles_13"
+  - first:
+      213: -6663661001994981313
+    second: "Torres y ca\xF1ones dorados por niveles_14"
+  - first:
+      213: -7697962566573893128
+    second: "Torres y ca\xF1ones dorados por niveles_15"
+  - first:
+      213: -1591657866150563931
+    second: "Torres y ca\xF1ones dorados por niveles_16"
+  - first:
+      213: -6158018416678853389
+    second: "Torres y ca\xF1ones dorados por niveles_17"
+  - first:
+      213: 4742845768284844261
+    second: "Torres y ca\xF1ones dorados por niveles_18"
+  - first:
+      213: 6974665437060883562
+    second: "Torres y ca\xF1ones dorados por niveles_19"
+  - first:
+      213: -4490543218400006747
+    second: "Torres y ca\xF1ones dorados por niveles_20"
+  - first:
+      213: 8868770779640140475
+    second: "Torres y ca\xF1ones dorados por niveles_21"
+  - first:
+      213: 225106355950582229
+    second: "Torres y ca\xF1ones dorados por niveles_22"
+  - first:
+      213: -3551966503179676292
+    second: "Torres y ca\xF1ones dorados por niveles_23"
+  - first:
+      213: 6450674549005523152
+    second: "Torres y ca\xF1ones dorados por niveles_24"
+  - first:
+      213: 4153433781397976138
+    second: "Torres y ca\xF1ones dorados por niveles_25"
+  - first:
+      213: -2130033419870959783
+    second: "Torres y ca\xF1ones dorados por niveles_26"
+  - first:
+      213: 2054742172109894545
+    second: "Torres y ca\xF1ones dorados por niveles_27"
+  - first:
+      213: 827818926971685871
+    second: "Torres y ca\xF1ones dorados por niveles_28"
+  - first:
+      213: 4909512671420312106
+    second: "Torres y ca\xF1ones dorados por niveles_29"
+  - first:
+      213: 6919573591399313966
+    second: "Torres y ca\xF1ones dorados por niveles_30"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1523
+        height: 1008
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a468ae45fbabc240800000000000000
+      internalID: 4813129696850502825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_1"
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 942
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac4c5622310e58f0800000000000000
+      internalID: -550000789589046104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_2"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 949
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a276f931bc4319f50800000000000000
+      internalID: 6886343352038418218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_3"
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 953
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98d4ba7aadfa8f80800000000000000
+      internalID: -8103385670854846309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_4"
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 956
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee2b762a710e1710800000000000000
+      internalID: 1665770536316907243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_5"
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 953
+        width: 109
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a191166fa55b2f0800000000000000
+      internalID: -957759331508872595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_6"
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 952
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127bea994e8c20420800000000000000
+      internalID: 2594857219475289889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_7"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 917
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1588cedf24f25d7e0800000000000000
+      internalID: -1741433716134344623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_8"
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 915
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d38d81dadf047a0800000000000000
+      internalID: -6394832550978110132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_9"
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 95
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba06d957fdc9aa6f0800000000000000
+      internalID: -672552710773579605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_10"
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 95
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e6361451e467050800000000000000
+      internalID: 5797907423484407425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_11"
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 103
+        width: 391
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe656171ac63537d0800000000000000
+      internalID: -2939382940190746897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_12"
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e024ea1009a077530800000000000000
+      internalID: 3852559619858514446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_13"
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 77
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 756a9ac90ca529a00800000000000000
+      internalID: 761771070287619671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_14"
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 83
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f303770df9be583a0800000000000000
+      internalID: -6663661001994981313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_15"
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 65
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9db1dc4d75b2590800000000000000
+      internalID: -7697962566573893128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_16"
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 45
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5afa32c8a9b49e9e0800000000000000
+      internalID: -1591657866150563931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_17"
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 49
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f42b8960e25a8aa0800000000000000
+      internalID: -6158018416678853389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_18"
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 47
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0351bf819f1d140800000000000000
+      internalID: 4742845768284844261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_19"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 33
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64653bf24dfac060800000000000000
+      internalID: 6974665437060883562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_20"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 21
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad6aba1cb26ea1c0800000000000000
+      internalID: -4490543218400006747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_21"
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 29
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb290da0904341b70800000000000000
+      internalID: 8868770779640140475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_22"
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 17
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d9fd1fb90dbf1300800000000000000
+      internalID: 225106355950582229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_23"
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 27
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7593e3d841e4bec0800000000000000
+      internalID: -3551966503179676292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_24"
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 17
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8902f3356658950800000000000000
+      internalID: 6450674549005523152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_25"
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 33
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a447552b406f3a930800000000000000
+      internalID: 4153433781397976138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_26"
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 29
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95781e8d3e99072e0800000000000000
+      internalID: -2130033419870959783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_27"
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 17
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193ff997e19e38c10800000000000000
+      internalID: 2054742172109894545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_28"
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 17
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb0e789de00d7b00800000000000000
+      internalID: 827818926971685871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_29"
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 0
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a694053c7122440800000000000000
+      internalID: 4909512671420312106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Torres y ca\xF1ones dorados por niveles_30"
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 17
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e22b7881583470060800000000000000
+      internalID: 6919573591399313966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Torres y ca\xF1ones dorados por niveles_0": 4813129696850502825
+      "Torres y ca\xF1ones dorados por niveles_1": -550000789589046104
+      "Torres y ca\xF1ones dorados por niveles_10": 5797907423484407425
+      "Torres y ca\xF1ones dorados por niveles_11": -2939382940190746897
+      "Torres y ca\xF1ones dorados por niveles_12": 3852559619858514446
+      "Torres y ca\xF1ones dorados por niveles_13": 761771070287619671
+      "Torres y ca\xF1ones dorados por niveles_14": -6663661001994981313
+      "Torres y ca\xF1ones dorados por niveles_15": -7697962566573893128
+      "Torres y ca\xF1ones dorados por niveles_16": -1591657866150563931
+      "Torres y ca\xF1ones dorados por niveles_17": -6158018416678853389
+      "Torres y ca\xF1ones dorados por niveles_18": 4742845768284844261
+      "Torres y ca\xF1ones dorados por niveles_19": 6974665437060883562
+      "Torres y ca\xF1ones dorados por niveles_2": 6886343352038418218
+      "Torres y ca\xF1ones dorados por niveles_20": -4490543218400006747
+      "Torres y ca\xF1ones dorados por niveles_21": 8868770779640140475
+      "Torres y ca\xF1ones dorados por niveles_22": 225106355950582229
+      "Torres y ca\xF1ones dorados por niveles_23": -3551966503179676292
+      "Torres y ca\xF1ones dorados por niveles_24": 6450674549005523152
+      "Torres y ca\xF1ones dorados por niveles_25": 4153433781397976138
+      "Torres y ca\xF1ones dorados por niveles_26": -2130033419870959783
+      "Torres y ca\xF1ones dorados por niveles_27": 2054742172109894545
+      "Torres y ca\xF1ones dorados por niveles_28": 827818926971685871
+      "Torres y ca\xF1ones dorados por niveles_29": 4909512671420312106
+      "Torres y ca\xF1ones dorados por niveles_3": -8103385670854846309
+      "Torres y ca\xF1ones dorados por niveles_30": 6919573591399313966
+      "Torres y ca\xF1ones dorados por niveles_4": 1665770536316907243
+      "Torres y ca\xF1ones dorados por niveles_5": -957759331508872595
+      "Torres y ca\xF1ones dorados por niveles_6": 2594857219475289889
+      "Torres y ca\xF1ones dorados por niveles_7": -1741433716134344623
+      "Torres y ca\xF1ones dorados por niveles_8": -6394832550978110132
+      "Torres y ca\xF1ones dorados por niveles_9": -672552710773579605
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

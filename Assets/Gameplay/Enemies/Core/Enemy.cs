@@ -21,9 +21,7 @@ namespace EternalTowers.Gameplay.Enemies
         [SerializeField, Min(0)] private int reward;
 
         [Header("Movement")]
-        [SerializeField] private EnemyPath path;
         [SerializeField] private EnemyMovement movement;
-        [SerializeField] private float laneOffset;
 
         [Header("Visual")]
         [SerializeField] private EnemyVisual visual;
@@ -43,8 +41,7 @@ namespace EternalTowers.Gameplay.Enemies
         public int BaseDamage => baseDamage;
         public int Reward => reward;
         public EnemyState State { get; private set; } = EnemyState.Spawning;
-        public EnemyPath Path => path;
-        public float LaneOffset => laneOffset;
+        public event Action<Enemy> SplitChildSpawned;
 
         private readonly Dictionary<object, float> damageReductionSources =
             new Dictionary<object, float>();
@@ -71,14 +68,6 @@ namespace EternalTowers.Gameplay.Enemies
             }
         }
 
-        private void Start()
-        {
-            if (State != EnemyState.Spawning)
-                return;
-
-            BeginMovement();
-        }
-
         protected virtual void OnDisable()
         {
             EnemyRegistry.Unregister(this);
@@ -86,6 +75,7 @@ namespace EternalTowers.Gameplay.Enemies
 
             if (movement != null)
             {
+                movement.Stop();
                 movement.ReachedGoal -= ReachGoal;
                 movement.DirectionChanged -= HandleDirectionChanged;
             }
@@ -163,6 +153,7 @@ namespace EternalTowers.Gameplay.Enemies
         {
             CurrentHealth = maxHealth;
             State = EnemyState.Spawning;
+            movement?.ResetNavigation();
         }
 
         public void SetMaxHealth(float value)
@@ -171,52 +162,29 @@ namespace EternalTowers.Gameplay.Enemies
             CurrentHealth = maxHealth;
         }
 
-        public void BeginMovement()
+        public void BeginRouteMovement(EnemyRouteDefinition route)
         {
-            if (
-                State == EnemyState.Dead ||
-                State == EnemyState.ReachedGoal
-            )
-                return;
-
-            if (path == null || path.WaypointCount <= 0)
+            if (route == null || movement == null || State == EnemyState.Dead || State == EnemyState.ReachedGoal)
                 return;
 
             State = EnemyState.Moving;
-
-            movement?.Begin(
-                path,
-                moveSpeed,
-                laneOffset
-            );
+            movement.BeginRoute(route, moveSpeed);
         }
 
-        public void SetPath(EnemyPath enemyPath)
+        public void CopyNavigationTo(Enemy child)
         {
-            path = enemyPath;
-
-            if (path == null)
+            if (child == null || movement == null || child.movement == null)
                 return;
 
-            if (path.WaypointCount <= 0)
-                return;
-
-            if (State == EnemyState.Spawning)
-                BeginMovement();
+            movement.CopyNavigationTo(child.movement, child.moveSpeed);
+            if (child.movement.IsMoving)
+                child.State = EnemyState.Moving;
         }
 
-        public void SetLaneOffset(float offset)
+        protected void NotifySplitChildSpawned(Enemy child)
         {
-            laneOffset = offset;
-
-            if (
-                path != null &&
-                path.WaypointCount > 0 &&
-                State == EnemyState.Spawning
-            )
-            {
-                BeginMovement();
-            }
+            if (child != null)
+                SplitChildSpawned?.Invoke(child);
         }
 
         public void SetDamageReductionSource(

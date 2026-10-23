@@ -12,6 +12,17 @@ public class LevelProgressionController : MonoBehaviour
 
     private void Awake()
     {
+        if (progression == null ||
+            progressManager == null ||
+            unlockSystem == null)
+        {
+            Debug.LogError(
+                "LevelProgressionController: faltan referencias en el Inspector."
+            );
+            enabled = false;
+            return;
+        }
+
         saveService = new LevelProgressionSaveService();
 
         LoadProgress();
