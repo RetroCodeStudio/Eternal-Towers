@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EternalTowers.Gameplay.Enemies
@@ -9,56 +10,90 @@ namespace EternalTowers.Gameplay.Enemies
         public event Action<Vector3> DirectionChanged;
         public event Action ReachedGoal;
 
-        private EnemyPath path;
+        private EnemyRouteDefinition routeDefinition;
+        private IReadOnlyList<Vector3> routePoints;
         private float moveSpeed;
-        private float laneOffset;
-        private int currentWaypointIndex;
+        private int currentRouteIndex;
         private bool isMoving;
         private float speedMultiplier = 1f;
         private int speedBoostVersion;
 
-        public int CurrentWaypointIndex => currentWaypointIndex;
+        public int CurrentRouteIndex => currentRouteIndex;
         public bool IsMoving => isMoving;
         public float CurrentSpeed => moveSpeed * speedMultiplier;
-
-        public void Begin(EnemyPath enemyPath, float speed)
+        public float PathProgress
         {
-            Begin(enemyPath, speed, 0f);
+            get
+            {
+                if (routeDefinition == null || routePoints == null || routePoints.Count == 0)
+                    return 0f;
+
+                if (currentRouteIndex >= routePoints.Count)
+                    return 1f;
+
+                Vector3 previousPoint = routePoints[Mathf.Max(0, currentRouteIndex - 1)];
+                float progress = GetSegmentProgress(previousPoint, routePoints[currentRouteIndex]);
+                return Mathf.Clamp01((currentRouteIndex + progress) / routePoints.Count);
+            }
         }
 
-        public void Begin(EnemyPath enemyPath, float speed, float offset)
+        public void BeginRoute(EnemyRouteDefinition enemyRoute, float speed)
         {
-            path = enemyPath;
+            routeDefinition = enemyRoute;
+            routePoints = null;
             moveSpeed = Mathf.Max(0f, speed);
-            laneOffset = offset;
-            currentWaypointIndex = 0;
+            currentRouteIndex = 0;
 
-            if (path == null || path.WaypointCount <= 0)
+            if (routeDefinition == null)
             {
                 isMoving = false;
                 return;
             }
 
-            if (path.GetWaypoint(0) != null)
+            EnemyRoutePathData routeData = EnemyRoutePathfinder.GetOrCreate(routeDefinition);
+            if (routeData == null || !routeData.IsValid)
             {
-                Vector3 firstWaypointPosition =
-                    path.GetWaypointPosition(0, laneOffset);
+                isMoving = false;
+                return;
+            }
 
-                if (Vector3.Distance(
-                        transform.position,
-                        firstWaypointPosition) < 0.05f
-                    && path.WaypointCount > 1)
-                {
-                    currentWaypointIndex = 1;
-                }
+            routePoints = routeData.Points;
+            if (routePoints.Count > 0)
+            {
+                if (Vector3.Distance(transform.position, routePoints[0]) < 0.05f && routePoints.Count > 1)
+                    currentRouteIndex = 1;
             }
 
             isMoving = true;
         }
 
+        public void CopyNavigationTo(EnemyMovement target, float targetSpeed)
+        {
+            if (target == null)
+                return;
+
+            target.routeDefinition = routeDefinition;
+            target.routePoints = routePoints;
+            target.moveSpeed = Mathf.Max(0f, targetSpeed);
+            target.currentRouteIndex = currentRouteIndex;
+            target.speedMultiplier = speedMultiplier;
+            target.isMoving = isMoving;
+        }
+
         public void Stop()
         {
             isMoving = false;
+        }
+
+        public void ResetNavigation()
+        {
+            routeDefinition = null;
+            routePoints = null;
+            moveSpeed = 0f;
+            currentRouteIndex = 0;
+            isMoving = false;
+            speedMultiplier = 1f;
+            speedBoostVersion++;
         }
 
         public void ApplySpeedMultiplier(float multiplier, float duration)
@@ -90,33 +125,36 @@ namespace EternalTowers.Gameplay.Enemies
             if (!isMoving)
                 return;
 
-            if (path == null || path.WaypointCount <= 0)
+            if (routeDefinition == null || routePoints == null || routePoints.Count == 0)
             {
                 isMoving = false;
                 return;
             }
 
-            Transform waypoint =
-                path.GetWaypoint(currentWaypointIndex);
+            TickRoute(deltaTime);
+        }
 
-            if (waypoint == null)
+        private void TickRoute(float deltaTime)
+        {
+            if (routePoints.Count == 0)
             {
-                AdvanceToNextWaypoint();
+                isMoving = false;
                 return;
             }
 
-            Vector3 targetPosition =
-                path.GetWaypointPosition(
-                    currentWaypointIndex,
-                    laneOffset
-                );
+            if (currentRouteIndex >= routePoints.Count)
+            {
+                isMoving = false;
+                ReachedGoal?.Invoke();
+                return;
+            }
 
-            Vector3 direction =
-                targetPosition - transform.position;
+            Vector3 targetPosition = routePoints[currentRouteIndex];
+            Vector3 direction = targetPosition - transform.position;
 
             if (direction.sqrMagnitude <= 0.0001f)
             {
-                AdvanceToNextWaypoint();
+                currentRouteIndex++;
                 return;
             }
 
@@ -127,6 +165,25 @@ namespace EternalTowers.Gameplay.Enemies
                 targetPosition,
                 CurrentSpeed * deltaTime
             );
+
+            if (Vector3.Distance(transform.position, targetPosition) < 0.05f)
+            {
+                currentRouteIndex++;
+                if (currentRouteIndex >= routePoints.Count)
+                {
+                    isMoving = false;
+                    ReachedGoal?.Invoke();
+                }
+            }
+        }
+
+        private float GetSegmentProgress(Vector3 previousPoint, Vector3 targetPoint)
+        {
+            float segmentLength = Vector3.Distance(previousPoint, targetPoint);
+            if (segmentLength <= 0f)
+                return 0f;
+
+            return Mathf.Clamp01(1f - Vector3.Distance(transform.position, targetPoint) / segmentLength);
         }
 
         private IEnumerator RemoveSpeedMultiplierAfter(
@@ -139,15 +196,5 @@ namespace EternalTowers.Gameplay.Enemies
                 speedMultiplier = 1f;
         }
 
-        private void AdvanceToNextWaypoint()
-        {
-            currentWaypointIndex++;
-
-            if (currentWaypointIndex >= path.WaypointCount)
-            {
-                isMoving = false;
-                ReachedGoal?.Invoke();
-            }
-        }
     }
 }

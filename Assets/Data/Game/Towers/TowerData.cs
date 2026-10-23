@@ -12,6 +12,9 @@ public class TowerData : ScriptableObject
     [Header("Economía")]
     [SerializeField] private int cost;
 
+    [Header("Construcción")]
+    [SerializeField] private GameObject towerPrefab;
+
     [Header("Visual")]
     [SerializeField] private Sprite towerIcon;
     [SerializeField] private List<EternalTowers.Gameplay.Towers.TowerLevelDefinition> levels = new List<EternalTowers.Gameplay.Towers.TowerLevelDefinition>();
@@ -20,6 +23,7 @@ public class TowerData : ScriptableObject
     public string TowerName => towerName;
     public TowerType TowerType => towerType;
     public int Cost => Mathf.Max(0, cost);
+    public GameObject TowerPrefab => towerPrefab;
     public Sprite TowerIcon => towerIcon;
     public IReadOnlyList<EternalTowers.Gameplay.Towers.TowerLevelDefinition> Levels => levels;
     public int MaxLevel

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using EternalTowers.Gameplay.Core;
 using UnityEngine;
 
@@ -7,19 +8,23 @@ public class TowerPlacementSystem : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform towerParent;
     [SerializeField] private GameEconomy economy;
+    [SerializeField] private List<TowerData> availableTowers = new List<TowerData>();
     [SerializeField] private bool addTemporaryMaxUpgradeOnPlacement = true;
-
-    private void Awake()
-    {
-        if (economy == null)
-            economy = FindAnyObjectByType<GameEconomy>();
-    }
 
     [Header("Validación")]
     [SerializeField] private Collider2D placementArea;
     [SerializeField] private LayerMask blockedAreaMask;
 
     public GameEconomy Economy => economy;
+    public IReadOnlyList<TowerData> AvailableTowers => availableTowers;
+
+    private void Awake()
+    {
+        if (economy == null)
+        {
+            economy = FindAnyObjectByType<GameEconomy>();
+        }
+    }
 
     public void SetEconomy(GameEconomy economyRef)
     {
@@ -63,26 +68,44 @@ public class TowerPlacementSystem : MonoBehaviour
         return new Vector2(worldPosition.x, worldPosition.y);
     }
 
-    public bool TryPlaceTower(GameObject towerPrefab, TowerData towerData, Vector2 position)
+    public bool TryPlaceTower(
+        GameObject towerPrefab,
+        TowerData towerData,
+        Vector2 position)
     {
         if (towerPrefab == null)
+        {
             return false;
+        }
 
         if (!CanPlaceTower(position))
+        {
             return false;
+        }
 
         int cost = towerData != null ? towerData.Cost : 0;
-        if (economy != null && cost > 0 && !economy.CanAfford(cost))
+
+        if (cost > 0 && (economy == null || !economy.CanAfford(cost)))
+        {
+            return false;
+        }
+
+        if (cost > 0 && !economy.Spend(cost))
             return false;
 
         GameObject towerObject = PlaceTower(towerPrefab, position);
+
         if (towerObject == null)
+        {
+            if (cost > 0)
+                economy.Earn(cost);
+
             return false;
+        }
 
-        if (economy != null && cost > 0)
-            economy.Spend(cost);
+        TowerController towerController =
+            towerObject.GetComponent<TowerController>();
 
-        TowerController towerController = towerObject.GetComponent<TowerController>();
         if (towerController != null && towerData != null)
         {
             towerController.Initialize(towerData);
@@ -90,15 +113,33 @@ public class TowerPlacementSystem : MonoBehaviour
             if (addTemporaryMaxUpgradeOnPlacement &&
                 towerObject.GetComponent<TemporaryTowerMaxUpgrade>() == null)
             {
-                TemporaryTowerMaxUpgrade temporaryUpgrade = towerObject.AddComponent<TemporaryTowerMaxUpgrade>();
+                TemporaryTowerMaxUpgrade temporaryUpgrade =
+                    towerObject.AddComponent<TemporaryTowerMaxUpgrade>();
+
                 temporaryUpgrade.SetTower(towerController);
             }
+        }
+
+        // Iniciar la animación de construcción después de colocar la torre.
+        Animator towerAnimator =
+            towerObject.GetComponent<Animator>();
+
+        if (towerAnimator != null)
+        {
+            towerAnimator.SetTrigger("Construir");
         }
 
         return true;
     }
 
-    public GameObject PlaceTower(GameObject towerPrefab, Vector2 position)
+    public bool TryPlaceTower(TowerData towerData, Vector2 position)
+    {
+        return towerData != null && TryPlaceTower(towerData.TowerPrefab, towerData, position);
+    }
+
+    public GameObject PlaceTower(
+        GameObject towerPrefab,
+        Vector2 position)
     {
         if (towerPrefab == null)
         {
@@ -110,6 +151,10 @@ public class TowerPlacementSystem : MonoBehaviour
             return null;
         }
 
-        return Instantiate(towerPrefab, position, Quaternion.identity, towerParent);
+        return Instantiate(
+            towerPrefab,
+            position,
+            Quaternion.identity,
+            towerParent);
     }
 }

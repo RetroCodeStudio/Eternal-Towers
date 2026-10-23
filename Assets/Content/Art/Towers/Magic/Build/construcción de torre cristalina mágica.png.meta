@@ -1,0 +1,515 @@
+fileFormatVersion: 2
+guid: 898fe09437f882e4cab3e355d735966f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1316601872211516305
+    second: "construcci\xF3n de torre cristalina m\xE1gica_0"
+  - first:
+      213: -6711145405093963007
+    second: "construcci\xF3n de torre cristalina m\xE1gica_1"
+  - first:
+      213: -525654659516145932
+    second: "construcci\xF3n de torre cristalina m\xE1gica_2"
+  - first:
+      213: -4563063848709268262
+    second: "construcci\xF3n de torre cristalina m\xE1gica_3"
+  - first:
+      213: -8264687437120452421
+    second: "construcci\xF3n de torre cristalina m\xE1gica_4"
+  - first:
+      213: -4450983292598469498
+    second: "construcci\xF3n de torre cristalina m\xE1gica_5"
+  - first:
+      213: 5481590894684889244
+    second: "construcci\xF3n de torre cristalina m\xE1gica_6"
+  - first:
+      213: -4601530365088798228
+    second: "construcci\xF3n de torre cristalina m\xE1gica_7"
+  - first:
+      213: -4619177671408007257
+    second: "construcci\xF3n de torre cristalina m\xE1gica_8"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Built 3
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64e738a29d7abde0800000000000000
+      internalID: -1316601872211516305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b116dafc83dd2a0800000000000000
+      internalID: -6711145405093963007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fed2094fdf74b8f0800000000000000
+      internalID: -525654659516145932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adcd1421b9dbca0c0800000000000000
+      internalID: -4563063848709268262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 13
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb84dca609eed4d80800000000000000
+      internalID: -8264687437120452421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 14
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 50
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c3877174eea32c0800000000000000
+      internalID: -4450983292598469498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 15
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9065b140e5821c40800000000000000
+      internalID: 5481590894684889244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 16
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce965bd43841420c0800000000000000
+      internalID: -4601530365088798228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 48
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e7a34dac409a1459945a143c6f6770
+      internalID: 1873548714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 11
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ef78d6c99ee2c42b78a7bb9fca8880
+      internalID: -432169742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 12
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 49
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfe15d7683da6a449adb23e04ebf83a
+      internalID: 1421972244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 4
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb03883a9f97b743acaa6b5b073b923
+      internalID: 1721975067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 5
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7519b922c251edd43ae6531492a8aa1b
+      internalID: -474707727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 6
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18fbc3380502744dab2e032190ddcd1
+      internalID: -665565793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 7
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea0b5af68c89334fbb9ecf233165146
+      internalID: -1340013086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Built 8
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 394
+        width: 240
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 30, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4426192b858c24f8c921d721b1ae3b
+      internalID: -1511208165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4d9e6ac5bbc914e4392f9f4d97ccf808
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Built 1: -525654659516145932
+      Built 10: 1873548714
+      Built 11: -432169742
+      Built 12: 1421972244
+      Built 13: -8264687437120452421
+      Built 14: -4450983292598469498
+      Built 15: 5481590894684889244
+      Built 16: -4601530365088798228
+      Built 2: -6711145405093963007
+      Built 3: -1316601872211516305
+      Built 4: 1721975067
+      Built 5: -474707727
+      Built 6: -665565793
+      Built 7: -1340013086
+      Built 8: -1511208165
+      Built 9: -4563063848709268262
+      "construcci\xF3n de torre cristalina m\xE1gica_0": -844998944
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
