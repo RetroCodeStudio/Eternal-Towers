@@ -5,6 +5,87 @@ TextureImporter:
   - first:
       213: 8813596809241820717
     second: Ataque de rayo_0
+  - first:
+      213: 8648603271761888019
+    second: Ataque de rayo_1
+  - first:
+      213: -8667464760756407326
+    second: Ataque de rayo_2
+  - first:
+      213: 9149078091812829759
+    second: Ataque de rayo_3
+  - first:
+      213: -4571396679190777354
+    second: Ataque de rayo_4
+  - first:
+      213: 412619659667627871
+    second: Ataque de rayo_5
+  - first:
+      213: -1852786962623305562
+    second: Ataque de rayo_6
+  - first:
+      213: 6313750972855378048
+    second: Ataque de rayo_7
+  - first:
+      213: 865630036709720263
+    second: Ataque de rayo_8
+  - first:
+      213: 8954797903009136574
+    second: Ataque de rayo_9
+  - first:
+      213: 5734873376188087663
+    second: Ataque de rayo_10
+  - first:
+      213: 6164624138021179381
+    second: Ataque de rayo_11
+  - first:
+      213: -7664408932893595789
+    second: Ataque de rayo_12
+  - first:
+      213: -3777224974505456714
+    second: Ataque de rayo_13
+  - first:
+      213: 5433632495268162213
+    second: Ataque de rayo_14
+  - first:
+      213: 6697731774729812706
+    second: Ataque de rayo_15
+  - first:
+      213: 6511289783992084671
+    second: Ataque de rayo_16
+  - first:
+      213: 9206015883073173877
+    second: Ataque de rayo_17
+  - first:
+      213: -7635851321622505331
+    second: Ataque de rayo_18
+  - first:
+      213: -3980911590566513213
+    second: Ataque de rayo_19
+  - first:
+      213: 5661928105789213540
+    second: Ataque de rayo_20
+  - first:
+      213: 7735387651739943385
+    second: Ataque de rayo_21
+  - first:
+      213: -1443247255143788683
+    second: Ataque de rayo_22
+  - first:
+      213: -8662842259954591708
+    second: Ataque de rayo_23
+  - first:
+      213: -1745567397225619205
+    second: Ataque de rayo_24
+  - first:
+      213: 7731346773474956375
+    second: Ataque de rayo_25
+  - first:
+      213: -463073624130543491
+    second: Ataque de rayo_26
+  - first:
+      213: 383402016771380761
+    second: Ataque de rayo_27
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +118,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,10 +129,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +156,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,13 +184,13 @@ TextureImporter:
       name: Ataque de rayo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1774
-        height: 887
+        x: 205
+        y: 700
+        width: 180
+        height: 280
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -121,11 +202,605 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_1
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31306a87ad2060870800000000000000
+      internalID: 8648603271761888019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_2
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3f5e7e8baf6b780800000000000000
+      internalID: -8667464760756407326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_3
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3affc4fc0e08fe70800000000000000
+      internalID: 9149078091812829759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_4
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f1fe69c0f22f80c0800000000000000
+      internalID: -4571396679190777354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_5
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fd4d1f46be9b500800000000000000
+      internalID: 412619659667627871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_6
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8ec50f2149946e0800000000000000
+      internalID: -1852786962623305562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_7
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0806251ee03fe9750800000000000000
+      internalID: 6313750972855378048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_8
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0cdfc9ee5530c00800000000000000
+      internalID: 865630036709720263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_9
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 704
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfb54c8f35d54c70800000000000000
+      internalID: 8954797903009136574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_10
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 700
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d398373fc569f40800000000000000
+      internalID: 5734873376188087663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_11
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 711
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff0d80fdf42d8550800000000000000
+      internalID: 6164624138021179381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_12
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 715
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377eb8deeac82a590800000000000000
+      internalID: -7664408932893595789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_13
+      rect:
+        serializedVersion: 2
+        x: 3091
+        y: 717
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb4ed5f5e9949bc0800000000000000
+      internalID: -3777224974505456714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_14
+      rect:
+        serializedVersion: 2
+        x: 3339
+        y: 728
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa6a7047f3286b40800000000000000
+      internalID: 5433632495268162213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_15
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eafd91209f13fc50800000000000000
+      internalID: 6697731774729812706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_16
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb86a7c6f8fbc5a50800000000000000
+      internalID: 6511289783992084671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_17
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5793e2b8ba652cf70800000000000000
+      internalID: 9206015883073173877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_18
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d885ef0fda1080690800000000000000
+      internalID: -7635851321622505331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_19
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c53c0a0006f0c8c0800000000000000
+      internalID: -3980911590566513213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_20
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bcd513d95339e40800000000000000
+      internalID: 5661928105789213540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_21
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d107edd51e995b60800000000000000
+      internalID: 7735387651739943385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_22
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57fc812a44e88fbe0800000000000000
+      internalID: -1443247255143788683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_23
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 248
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4281a2ebcd667c780800000000000000
+      internalID: -8662842259954591708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_24
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf02ddc53bf76c7e0800000000000000
+      internalID: -1745567397225619205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_25
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75456549de24b4b60800000000000000
+      internalID: 7731346773474956375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_26
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 250
+        width: 180
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70a8d80ef4d299f0800000000000000
+      internalID: -463073624130543491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque de rayo_27
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 250
+        width: 180
+        height: 280
+      alignment: 9
+      pivot: {x: 0.47811145, y: 0.5422142}
+      border: {x: 0, y: 20, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91693d75a1e125500800000000000000
+      internalID: 383402016771380761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 08a2898f1386bb445aacab2dd4ae01ad
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +811,33 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Ataque de rayo_0: 8813596809241820717
+      Ataque de rayo_1: 8648603271761888019
+      Ataque de rayo_10: 5734873376188087663
+      Ataque de rayo_11: 6164624138021179381
+      Ataque de rayo_12: -7664408932893595789
+      Ataque de rayo_13: -3777224974505456714
+      Ataque de rayo_14: 5433632495268162213
+      Ataque de rayo_15: 6697731774729812706
+      Ataque de rayo_16: 6511289783992084671
+      Ataque de rayo_17: 9206015883073173877
+      Ataque de rayo_18: -7635851321622505331
+      Ataque de rayo_19: -3980911590566513213
+      Ataque de rayo_2: -8667464760756407326
+      Ataque de rayo_20: 5661928105789213540
+      Ataque de rayo_21: 7735387651739943385
+      Ataque de rayo_22: -1443247255143788683
+      Ataque de rayo_23: -8662842259954591708
+      Ataque de rayo_24: -1745567397225619205
+      Ataque de rayo_25: 7731346773474956375
+      Ataque de rayo_26: -463073624130543491
+      Ataque de rayo_27: 383402016771380761
+      Ataque de rayo_3: 9149078091812829759
+      Ataque de rayo_4: -4571396679190777354
+      Ataque de rayo_5: 412619659667627871
+      Ataque de rayo_6: -1852786962623305562
+      Ataque de rayo_7: 6313750972855378048
+      Ataque de rayo_8: 865630036709720263
+      Ataque de rayo_9: 8954797903009136574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
